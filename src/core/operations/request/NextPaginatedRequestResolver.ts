@@ -2,8 +2,8 @@ import { PaginatedOperation, PaginatedRequest } from '../PaginatedOperation';
 import { Pagination } from '../response/Pagination';
 
 export class NextPaginatedRequestResolver {
-  public static resolve<Request extends PaginatedRequest>(
-    operation: PaginatedOperation<Request, unknown, unknown, unknown>,
+  public static resolve<Request extends PaginatedRequest, JSONRequest>(
+    operation: PaginatedOperation<Request, JSONRequest, unknown, unknown>,
     request: Request,
     pagination: Pagination,
   ): Request | null {

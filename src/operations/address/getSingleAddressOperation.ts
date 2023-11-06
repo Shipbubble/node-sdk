@@ -59,5 +59,5 @@ function deserializeRequest(jsonRequest: GetSingleAddressJSONRequest) {
 }
 
 function deserializeResponse(jsonResponse: GetSingleAddressJSONResponse) {
-  return toCamelCase(jsonResponse);
+  return toCamelCase(jsonResponse.data);
 }

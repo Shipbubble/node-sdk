@@ -2,9 +2,9 @@ export interface Operation<Request, JSONRequest, Response, JSONResponse> {
   name: string;
   method: OperationRequestMethod;
   urlPathPattern: string;
-  urlPathParamNames?: (keyof Request)[];
-  urlSearchParamNames?: (keyof Request)[];
-  bodyParamNames?: (keyof Request)[];
+  urlPathParamNames?: (keyof JSONRequest)[];
+  urlSearchParamNames?: (keyof JSONRequest)[];
+  bodyParamNames?: (keyof JSONRequest)[];
   firstPageIndex?: number;
 
   getRequestUrlParams(request: Request): OperationRequestUrlParams;

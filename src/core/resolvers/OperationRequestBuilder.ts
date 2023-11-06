@@ -1,9 +1,9 @@
 import { Config, SBConfig } from '../config';
 import { Operation, OperationRequestBody } from '../operations';
 
-export class OperationRequestBuilder<Request> {
+export class OperationRequestBuilder<Request, JSONRequest> {
   public constructor(
-    private readonly operation: Operation<Request, unknown, unknown, unknown>,
+    private readonly operation: Operation<Request, JSONRequest, unknown, unknown>,
     private readonly config: Config,
   ) {}
 
@@ -23,7 +23,7 @@ export class OperationRequestBuilder<Request> {
 
     const urlSearchParams: Record<string, string | string[] | boolean> = {};
     Object.keys(urlParams)
-      .filter((paramName) => !this.operation.urlPathParamNames?.includes(paramName as keyof Request))
+      .filter((paramName) => !this.operation.urlPathParamNames?.includes(paramName as keyof JSONRequest))
       .forEach((paramName) => {
         const paramValue = urlParams[paramName];
         if (paramValue) {

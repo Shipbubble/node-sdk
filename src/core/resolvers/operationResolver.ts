@@ -16,7 +16,7 @@ export class OperationResolver<Request, JSONRequest, Response, JSONResponse> {
   ) {}
 
   public readonly fetch = async (request: Request): Promise<ResponseAdapter<Response, JSONResponse>> => {
-    this.requestValidator.validate(request);
+    this.requestValidator.validate(this.operation.serializeRequest(request));
 
     const { url, urlSearchParams } = this.requestBuilder.prepareUrl(this.baseUrl, request);
     const body = this.requestBuilder.prepareBody(request);

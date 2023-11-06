@@ -27,7 +27,7 @@ export class PaginatedOperationResolver<Request extends PaginatedRequest, JSONRe
   }
 
   public readonly fetch = async (request: Request): Promise<PaginatedResponseAdapter<Result, JSONResult>> => {
-    this.requestValidator.validate(request);
+    this.requestValidator.validate(this.operation.serializeRequest(request));
 
     const { url, urlSearchParams } = this.requestBuilder.prepareUrl(this.baseUrl, request);
     const body = this.requestBuilder.prepareBody(request);

@@ -8,7 +8,7 @@ describe('OperationRequestValidator', () => {
     gamma: number;
   }
 
-  const operation: Partial<Operation<TestRequest, unknown, unknown, unknown>> = {
+  const operation: Partial<Operation<TestRequest, TestRequest, unknown, unknown>> = {
     urlPathParamNames: ['alfa'],
     urlSearchParamNames: ['beta'],
     bodyParamNames: ['gamma'],

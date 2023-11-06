@@ -42,23 +42,17 @@ function getRequestUrlParams() {
 }
 
 function getRequestBody(request: ValidateAddressRequest) {
-  return {
-    ...request,
-  };
+  return request;
 }
 
 function serializeRequest(request: ValidateAddressRequest) {
-  return {
-    ...request,
-  };
+  return request;
 }
 
 function deserializeRequest(jsonRequest: ValidateAddressJSONRequest) {
-  return {
-    ...jsonRequest,
-  };
+  return jsonRequest;
 }
 
 function deserializeResponse(jsonResponse: ValidateAddressJSONResponse) {
-  return toCamelCase(jsonResponse);
+  return toCamelCase(jsonResponse.data);
 }

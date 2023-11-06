@@ -69,5 +69,5 @@ function deserializeRequest(jsonRequest: EditAddressJSONRequest) {
 }
 
 function deserializeResponse(jsonResponse: EditAddressJSONResponse) {
-  return toCamelCase(jsonResponse);
+  return toCamelCase(jsonResponse.data);
 }
