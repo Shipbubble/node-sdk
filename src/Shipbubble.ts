@@ -95,6 +95,9 @@ export class Shipbubble {
     getCouriers: (): Promise<GetCouriersResponseAdapter> => {
       return new OperationResolver(getCouriersOperation, BASE_URL, this.config).fetch({});
     },
+  };
+
+  public readonly insurance = {
     getInsuranceRates: (request: GetInsuranceRatesRequest): Promise<GetInsuranceRatesResponseAdapter> => {
       return new OperationResolver(getInsuranceRatesOperation, BASE_URL, this.config).fetch(request);
     },

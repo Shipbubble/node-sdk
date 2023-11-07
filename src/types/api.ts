@@ -2662,7 +2662,7 @@ export interface operations {
                *     },
                *     "date": "2022-09-11T12:06:29.000Z",
                *     "dropoff_station": {
-               *       "address": "1A, Olabode Street, off M/M International Airport Road Ajao Estate, Lagos, Nigeria ",
+               *       "address": "1A, Olabode Street, off M/M International Airport Road Ajao Estate, Lagos, Nigeria",
                *       "name": "CourierPlus Services Limited",
                *       "phone": null
                *     },
@@ -2680,7 +2680,7 @@ export interface operations {
                *       "shipping_fee": 1891
                *     },
                *     "pickup_station": {
-               *       "address": "1A, Olabode Street, off M/M International Airport Road Ajao Estate, Lagos, Nigeria ",
+               *       "address": "1A, Olabode Street, off M/M International Airport Road Ajao Estate, Lagos, Nigeria",
                *       "name": "CourierPlus Services Limited",
                *       "phone": null
                *     },
