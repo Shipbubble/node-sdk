@@ -40,6 +40,9 @@ import {
   GetShipmentsRequest,
   GetShipmentsResponseAdapter,
   getShipmentsOperation,
+  EditTokenDetailsRequest,
+  editRequestTokenOperation,
+  EditTokenDetailsResponseAdapter,
 } from './operations';
 
 const BASE_URL = 'https://api.shipbubble.com/v1';
@@ -120,6 +123,9 @@ export class Shipbubble {
     },
     cancelShipment: (request: CancelShipmentRequest): Promise<CancelShipmentResponseAdapter> => {
       return new OperationResolver(cancelShipmentOperation, BASE_URL, this.config).fetch(request);
+    },
+    editRequestTokenDetails: (request: EditTokenDetailsRequest): Promise<EditTokenDetailsResponseAdapter> => {
+      return new OperationResolver(editRequestTokenOperation, BASE_URL, this.config).fetch(request);
     },
   };
 

@@ -1,75 +1,70 @@
-// TODO: Not added to docs yet
+import { Operation, ResponseAdapter } from '../../core';
+import { operations } from '../../types/api';
+import { Camelize, toCamelCase } from '../../utils';
 
-// import { Operation, ResponseAdapter } from '../../core';
-// import { operations } from '../../types/api';
-// import { Camelize, toCamelCase } from '../../utils';
+type OperationId = 'updateRequestTokenDetails';
 
-// type OperationId = 'editAddress';
+type BodyParams = operations[OperationId]['requestBody']['content']['application/json'];
+type RequestParams = BodyParams;
 
-// type PathParams = operations[OperationId]['parameters']['path'];
-// type BodyParams = operations[OperationId]['requestBody']['content']['application/json'];
-// type RequestParams = PathParams & BodyParams;
+type SuccessResponse = operations[OperationId]['responses']['200']['content']['application/json'];
 
-// type SuccessResponse = operations[OperationId]['responses']['200']['content']['application/json'];
+export interface EditTokenDetailsRequest extends Camelize<Required<RequestParams>> {}
 
-// export interface EditAddressRequest extends Camelize<Omit<RequestParams, 'address_code'>> {
-//   addressCode: number;
-// }
+export type EditTokenDetailsJSONRequest = ReturnType<typeof serializeRequest>;
 
-// export type EditAddressJSONRequest = ReturnType<typeof serializeRequest>;
+export type EditTokenDetailsJSONResponse = SuccessResponse;
 
-// export type EditAddressJSONResponse = SuccessResponse;
+export type EditTokenDetailsResponse = ReturnType<typeof deserializeResponse>;
 
-// export type EditAddressResponse = ReturnType<typeof deserializeResponse>;
+export interface EditTokenDetailsResponseAdapter
+  extends ResponseAdapter<EditTokenDetailsResponse, EditTokenDetailsJSONResponse> {}
 
-// export interface EditAddressResponseAdapter extends ResponseAdapter<EditAddressResponse, EditAddressJSONResponse> {}
+export const editRequestTokenOperation: Operation<
+  EditTokenDetailsRequest,
+  EditTokenDetailsJSONRequest,
+  EditTokenDetailsResponse,
+  EditTokenDetailsJSONResponse
+> = {
+  method: 'PATCH',
+  name: 'updateRequestTokenDetails',
+  urlPathPattern: '/shipping/fetch_rates/request_token',
+  bodyParamNames: ['reciever_name', 'reciever_phone', 'sender_name', 'sender_phone', 'request_token'],
+  getRequestUrlParams,
+  getRequestBody,
+  deserializeResponse,
+  serializeRequest,
+  deserializeRequest,
+};
 
-// export const editRequestTokenOperation: Operation<
-//   EditAddressRequest,
-//   EditAddressJSONRequest,
-//   EditAddressResponse,
-//   EditAddressJSONResponse
-// > = {
-//   method: 'PATCH',
-//   name: 'editAddress',
-//   urlPathPattern: '/shipping/address/{addressCode}',
-//   bodyParamNames: ['email', 'name', 'phone'],
-//   urlPathParamNames: ['addressCode'],
-//   getRequestUrlParams,
-//   getRequestBody,
-//   deserializeResponse,
-//   serializeRequest,
-//   deserializeRequest,
-// };
+function getRequestUrlParams(request: EditTokenDetailsRequest) {
+  return {};
+}
 
-// function getRequestUrlParams(request: EditAddressRequest) {
-//   return {
-//     addressCode: request.addressCode.toString(),
-//   };
-// }
+function getRequestBody(request: EditTokenDetailsRequest) {
+  return {
+    reciever_name: request.recieverName,
+    reciever_phone: request.recieverPhone,
+    sender_name: request.senderName,
+    sender_phone: request.senderPhone,
+    request_token: request.requestToken,
+  };
+}
 
-// function getRequestBody(request: EditAddressRequest) {
-//   return {
-//     email: request.email,
-//     name: request.name,
-//     phone: request.phone,
-//   };
-// }
+function serializeRequest(request: EditTokenDetailsRequest) {
+  return {
+    reciever_name: request.recieverName,
+    reciever_phone: request.recieverPhone,
+    sender_name: request.senderName,
+    sender_phone: request.senderPhone,
+    request_token: request.requestToken,
+  };
+}
 
-// function serializeRequest(request: EditAddressRequest) {
-//   return {
-//     ...request,
-//     addressCode: request.addressCode.toString(),
-//   };
-// }
+function deserializeRequest(jsonRequest: EditTokenDetailsJSONRequest) {
+  return toCamelCase(jsonRequest);
+}
 
-// function deserializeRequest(jsonRequest: EditAddressJSONRequest) {
-//   return {
-//     ...jsonRequest,
-//     addressCode: Number(jsonRequest.addressCode),
-//   };
-// }
-
-// function deserializeResponse(jsonResponse: EditAddressJSONResponse) {
-//   return toCamelCase(jsonResponse.data);
-// }
+function deserializeResponse(jsonResponse: EditTokenDetailsJSONResponse) {
+  return true;
+}
