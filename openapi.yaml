@@ -20,7 +20,7 @@ info:
   version: 1.0.0
   contact: {}
 servers:
-  - url: https://api.shipbubble.com/v1
+  - url: '{{url}}'
 paths:
   /shipping/wallet/balance:
     get:
@@ -2045,7 +2045,7 @@ paths:
               properties:
                 category_id:
                   type: number
-                  example: 2178251
+                  example: 90097994
                 delivery_instructions:
                   type: string
                   example: Please provide additional instructions for your package
@@ -2094,13 +2094,13 @@ paths:
                       unit_weight: 1
                 pickup_date:
                   type: string
-                  example: '2023-06-15'
+                  example: '2023-06-02'
                 reciever_address_code:
                   type: number
-                  example: 34289748
+                  example: 31800995
                 sender_address_code:
                   type: number
-                  example: 44906597
+                  example: 99959896
             examples:
               Request shipping rates:
                 value: "{\r\n    \"sender_address_code\":1309853,\r\n    \"reciever_address_code\":51097549,\r\n    \"pickup_date\":\"2022-12-19\",\r\n    \"package_type\":90097994,\r\n    \"package_items\":{{items_to_be_delivered}},\r\n    \"box_size_id\":27459899,\r\n    \"message\":\"Please provide additional instructions for your package\"\r\n}"
@@ -3274,6 +3274,141 @@ paths:
         schema:
           type: string
           example: darum,gigl
+  /shipping/fetch_rates/request_token:
+    patch:
+      tags:
+        - Shipping Rates
+      summary: Update request token details
+      description: Update request token details
+      operationId: updateRequestTokenDetails
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reciever_name:
+                  type: string
+                  example: Josh james
+                reciever_phone:
+                  type: string
+                  example: '+18322023430'
+                request_token:
+                  type: string
+                  example: >-
+                    0ad1bc057306f1396bbcfdeaa8591d03612704e95e90cf1df655b8bacc179b25
+                sender_name:
+                  type: string
+                  example: jeferry williams
+                sender_phone:
+                  type: string
+                  example: '08023150182'
+            examples:
+              Update request token details:
+                value:
+                  reciever_name: Josh james
+                  reciever_phone: '+18322023430'
+                  request_token: >-
+                    0ad1bc057306f1396bbcfdeaa8591d03612704e95e90cf1df655b8bacc179b25
+                  sender_name: jeferry williams
+                  sender_phone: '08023150182'
+      responses:
+        '200':
+          description: Update request token details
+          headers:
+            Access-Control-Allow-Credentials:
+              schema:
+                type: string
+                example: 'true'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: '75'
+            Content-Security-Policy:
+              schema:
+                type: string
+                example: >-
+                  default-src 'self';base-uri
+                  'self';block-all-mixed-content;font-src 'self' https:
+                  data:;frame-ancestors 'self';img-src 'self' data:;object-src
+                  'none';script-src 'self';script-src-attr 'none';style-src
+                  'self' https: 'unsafe-inline';upgrade-insecure-requests
+            Date:
+              schema:
+                type: string
+                example: Sat, 23 Sep 2023 17:12:20 GMT
+            ETag:
+              schema:
+                type: string
+                example: W/"4b-XX0i3vMTql08QmSsT36CXsNHD5w"
+            Expect-CT:
+              schema:
+                type: string
+                example: max-age=0
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            Referrer-Policy:
+              schema:
+                type: string
+                example: no-referrer
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15552000; includeSubDomains
+            Vary:
+              schema:
+                type: string
+                example: Origin, Accept-Encoding
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-DNS-Prefetch-Control:
+              schema:
+                type: string
+                example: 'off'
+            X-Download-Options:
+              schema:
+                type: string
+                example: noopen
+            X-Frame-Options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+            X-Permitted-Cross-Domain-Policies:
+              schema:
+                type: string
+                example: none
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Request token details updated successfully
+                  status:
+                    type: string
+                    example: success
+              examples:
+                Update request token details:
+                  value:
+                    message: Request token details updated successfully
+                    status: success
   /shipping/insurance_rates:
     get:
       tags:
@@ -6131,12 +6266,12 @@ paths:
                   example: Please provide additional instructions for your package
                 pickup_date:
                   type: string
-                  example: '2023-05-07'
+                  example: '2023-06-07'
             examples:
               Get rates for a return shipment request:
                 value:
                   delivery_instructions: Please provide additional instructions for your package
-                  pickup_date: '2023-05-07'
+                  pickup_date: '2023-06-07'
       responses:
         '200':
           description: ''
@@ -6678,7 +6813,7 @@ tags:
   - name: Authentication
     description: >-
       Shipbubble API uses API keys to authenticate requests. Test mode API keys
-      have the prefix sb**_sandbox_** and Live mode API keys have the prefix
+      have the prefix sb_**sandbox**_ and Live mode API keys have the prefix
       sb_**prod_**.
 
 

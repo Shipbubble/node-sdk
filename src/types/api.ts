@@ -97,6 +97,10 @@ export interface paths {
       };
     };
   };
+  '/shipping/fetch_rates/request_token': {
+    /** Update request token details */
+    patch: operations['updateRequestTokenDetails'];
+  };
   '/shipping/insurance_rates': {
     /** Get Insurance Rates */
     get: operations['getInsuranceRates'];
@@ -1586,7 +1590,7 @@ export interface operations {
     requestBody: {
       content: {
         'application/json': {
-          /** @example 2178251 */
+          /** @example 90097994 */
           category_id?: number;
           /** @example Please provide additional instructions for your package */
           delivery_instructions?: string;
@@ -1628,11 +1632,11 @@ export interface operations {
             /** @example 1 */
             unit_weight?: number;
           }[];
-          /** @example 2023-06-15 */
+          /** @example 2023-06-02 */
           pickup_date?: string;
-          /** @example 34289748 */
+          /** @example 31800995 */
           reciever_address_code?: number;
-          /** @example 44906597 */
+          /** @example 99959896 */
           sender_address_code?: number;
         };
       };
@@ -1883,6 +1887,58 @@ export interface operations {
           reciever_address_code?: number;
           /** @example 32235981 */
           sender_address_code?: number;
+        };
+      };
+    };
+  };
+  /** Update request token details */
+  updateRequestTokenDetails: {
+    responses: {
+      /** Update request token details */
+      200: {
+        headers: {
+          'Access-Control-Allow-Credentials'?: string;
+          'Access-Control-Allow-Origin'?: string;
+          Connection?: string;
+          'Content-Length'?: string;
+          'Content-Security-Policy'?: string;
+          Date?: string;
+          ETag?: string;
+          'Expect-CT'?: string;
+          'Keep-Alive'?: string;
+          'Referrer-Policy'?: string;
+          'Strict-Transport-Security'?: string;
+          Vary?: string;
+          'X-Content-Type-Options'?: string;
+          'X-DNS-Prefetch-Control'?: string;
+          'X-Download-Options'?: string;
+          'X-Frame-Options'?: string;
+          'X-Permitted-Cross-Domain-Policies'?: string;
+          'X-XSS-Protection'?: string;
+        };
+        content: {
+          'application/json': {
+            /** @example Request token details updated successfully */
+            message?: string;
+            /** @example success */
+            status?: string;
+          };
+        };
+      };
+    };
+    requestBody: {
+      content: {
+        'application/json': {
+          /** @example Josh james */
+          reciever_name?: string;
+          /** @example +18322023430 */
+          reciever_phone?: string;
+          /** @example 0ad1bc057306f1396bbcfdeaa8591d03612704e95e90cf1df655b8bacc179b25 */
+          request_token?: string;
+          /** @example jeferry williams */
+          sender_name?: string;
+          /** @example 08023150182 */
+          sender_phone?: string;
         };
       };
     };
@@ -3334,7 +3390,7 @@ export interface operations {
         'application/json': {
           /** @example Please provide additional instructions for your package */
           delivery_instructions?: string;
-          /** @example 2023-05-07 */
+          /** @example 2023-06-07 */
           pickup_date?: string;
         };
       };
