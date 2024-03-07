@@ -18,6 +18,7 @@ export interface RequestShippingRatesFromCouriersRequest
   pickupDate: Date;
   serviceType?: ServiceTypes;
   deliveryInstructions?: string;
+  // TODO: change from serviceCodes to orderId
   serviceCodes: string[];
 }
 

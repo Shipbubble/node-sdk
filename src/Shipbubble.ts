@@ -45,7 +45,8 @@ import {
   EditTokenDetailsResponseAdapter,
 } from './operations';
 
-const BASE_URL = 'https://api.shipbubble.com/v1';
+// const BASE_URL = 'https://api.shipbubble.com/v1';
+const BASE_URL = 'http://localhost:6001/v1';
 
 export class Shipbubble {
   protected config: Config;

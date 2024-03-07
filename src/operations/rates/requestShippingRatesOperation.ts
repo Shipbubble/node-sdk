@@ -1,6 +1,7 @@
 import { Operation, ResponseAdapter } from '../../core';
 import { operations } from '../../types/api';
 import { Camelize, toCamelCase } from '../../utils';
+import { toSnakeCase } from '../../utils/toSnakeCase';
 
 type OperationId = 'requestShippingRates';
 
@@ -62,9 +63,9 @@ function getRequestBody(request: RequestShippingRatesRequest) {
     sender_address_code: request.senderAddressCode,
     reciever_address_code: request.recieverAddressCode,
     package_dimension: request.packageDimension,
-    package_items: request.packageItems,
+    package_items: toSnakeCase(request.packageItems),
     category_id: request.categoryId,
-    pickup_date: request.pickupDate.toISOString(),
+    pickup_date: request.pickupDate.toISOString().split('T')[0],
     delivery_instructions: request.deliveryInstructions,
   };
 }
@@ -76,7 +77,7 @@ function serializeRequest(request: RequestShippingRatesRequest) {
     package_dimension: request.packageDimension,
     package_items: request.packageItems,
     category_id: request.categoryId,
-    pickup_date: request.pickupDate.toISOString(),
+    pickup_date: request.pickupDate.toISOString().split('T')[0],
     delivery_instructions: request.deliveryInstructions,
   };
 }

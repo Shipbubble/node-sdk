@@ -1,6 +1,7 @@
 import { Operation, ResponseAdapter } from '../../core';
 import { operations } from '../../types/api';
 import { Camelize, toCamelCase } from '../../utils';
+import { toSnakeCase } from '../../utils/toSnakeCase';
 
 type OperationId = 'requestShippingRatesForSelectedCouriers';
 
@@ -40,7 +41,7 @@ export const requestShippingRatesFromCouriersOperation: Operation<
 > = {
   method: 'POST',
   name: 'requestShippingRatesForSelectedCouriers',
-  urlPathPattern: '/shipping/fetch_rates/{serviceCodes}',
+  urlPathPattern: '/shipping/fetch_rates/{service_codes}',
   bodyParamNames: [
     'category_id',
     'delivery_instructions',
@@ -69,9 +70,8 @@ function getRequestBody(request: RequestShippingRatesFromCouriersRequest) {
     sender_address_code: request.senderAddressCode,
     reciever_address_code: request.recieverAddressCode,
     package_dimension: request.packageDimension,
-    package_items: request.packageItems,
+    package_items: toSnakeCase(request.packageItems),
     category_id: request.categoryId,
-    // use YYYY-MM-DD format for pickup_date
     pickup_date: request.pickupDate.toISOString().split('T')[0],
     service_codes: request.serviceCodes.join(','),
     delivery_instructions: request.deliveryInstructions,
