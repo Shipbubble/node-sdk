@@ -13,7 +13,7 @@ export class OperationRequestValidator<Request, JSONRequest> {
   }
 
   public validate(request: JSONRequest) {
-    const requestParamNames = Object.keys(request as Record<string, unknown>);
+    const requestParamNames = Object.keys(request ?? {} as Record<string, unknown>);
 
     for (const paramName of requestParamNames) {
       if (!this.allParamNames.includes(paramName as keyof Request & keyof JSONRequest)) {
