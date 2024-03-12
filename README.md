@@ -67,7 +67,12 @@ console.log(response);
 The Shipbubble SDK returns two types of responses: `raw` and `formatted`. The `raw` response returns the data as it is from the API, while the `formatted` response converts the response to camel case for camel case lovers and also formats date strings and returns the date object.
 
 ```js
-const response = await Shipbubble.wallet.walletBalance();
+const response = await Shipbubble.address.validateAddress({
+  address: '62 Old yaba road, yaba, Lagos',
+  email: 'exampleemail@mail.com',
+  phone: '08123456789',
+  name: 'John Doe',
+});
 console.log(response.raw);
 console.log(response.formatted);
 ```
