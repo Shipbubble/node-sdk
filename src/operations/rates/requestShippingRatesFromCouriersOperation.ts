@@ -108,7 +108,7 @@ function deserializeResponse(jsonResponse: RequestShippingRatesFromCouriersJSONR
       ...toCamelCase(courier),
       deliveryEtaTime: new Date(courier.delivery_eta_time),
       //   TODO: pickup_eta_time is not in the documentation
-        pickupEtaTime: new Date(courier.pickup_eta_time),
+      pickupEtaTime: new Date(courier.pickup_eta_time),
     })),
     cheapestCourier: {
       ...toCamelCase(jsonResponse.data.cheapest_courier),
