@@ -1690,6 +1690,7 @@ export interface operations {
                 currency?: string;
                 /** @example Same day delivery */
                 delivery_eta?: string;
+                delivery_eta_time?: string;
                 discount?: {
                   /** @example 138 */
                   discounted?: number;

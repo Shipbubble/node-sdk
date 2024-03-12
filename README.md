@@ -64,8 +64,6 @@ console.log(response);
 
 # Response types
 
-<!-- state that on every response object, there is the raw and the formatted object. the raw returns the data as it is from the api, while formatted converts the response to camel case for camel case lovers and also formats date strings and returns the date object -->
-
 The Shipbubble SDK returns two types of responses: `raw` and `formatted`. The `raw` response returns the data as it is from the API, while the `formatted` response converts the response to camel case for camel case lovers and also formats date strings and returns the date object.
 
 ```js
@@ -123,6 +121,21 @@ Shipbubble.[module].[method](Options);
   - [cancelShipment](https://docs.shipbubble.com/api-reference/shipments/cancel-shipment)
 - tracking
   - [getShipments](https://docs.shipbubble.com/api-reference/tracking/get-shipments)
+
+# 📝 TypeScript support
+
+The Shipbubble SDK is written in TypeScript and provides types for all the methods and their options. You can import the method options and return interface from the package and use them in your application.
+
+```ts
+import { GetValidatedAddressRequest, GetValidatedAddressResponseAdapter } from 'shipbubble';
+
+const options: GetValidatedAddressRequest = {
+  Page: 1,
+  PerPage: 5,
+};
+
+const response = await Shipbubble.address.getValidatedAddresses(options);
+```
 
 # 📚 Documentation
 

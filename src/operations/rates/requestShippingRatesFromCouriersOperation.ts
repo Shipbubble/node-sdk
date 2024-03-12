@@ -104,15 +104,15 @@ function deserializeRequest(
 function deserializeResponse(jsonResponse: RequestShippingRatesFromCouriersJSONResponse) {
   return {
     ...toCamelCase(jsonResponse.data),
-    couriers: jsonResponse.data.couriers.map((courier) => ({
+    couriers: jsonResponse.data.couriers.map((courier: any) => ({
       ...toCamelCase(courier),
-      // deliveryEtaTime: new Date(courier.delivery_eta_time),
+      deliveryEtaTime: new Date(courier.delivery_eta_time),
       //   TODO: pickup_eta_time is not in the documentation
-      //   pickupEtaTime: new Date(courier.pickup_eta_time),
+        pickupEtaTime: new Date(courier.pickup_eta_time),
     })),
     cheapestCourier: {
       ...toCamelCase(jsonResponse.data.cheapest_courier),
-      // deliveryEtaTime: new Date(jsonResponse.data.cheapest_courier.delivery_eta_time),
+      deliveryEtaTime: new Date(jsonResponse.data.cheapest_courier.delivery_eta_time),
     },
     checkoutData: {
       ...toCamelCase(jsonResponse.data.checkout_data),
