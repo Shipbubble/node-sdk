@@ -2,7 +2,7 @@
 
 <div align="center">
     <a align="center" href="https://www.shipbubble.com/" target="_blank">
-      <img src="https://res.cloudinary.com/delivry/image/upload/v1693997143/app_assets/white-shipbubble-logo_ox2w53.svg" alt="Moralis JS SDK" height=200/>
+      <img src="https://res.cloudinary.com/delivry/image/upload/v1693997143/app_assets/white-shipbubble-logo_ox2w53.svg" alt="Shipbubble JS SDK" height=200/>
     </a>
     <h1 align="center">Shipbubble SDK (JavaScript / TypeScript)</h1>
     <!-- <img alt="npm" src="https://img.shields.io/npm/v/shipbubble?label=version">
