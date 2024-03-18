@@ -5,10 +5,10 @@
       <img src="https://res.cloudinary.com/delivry/image/upload/v1693997143/app_assets/white-shipbubble-logo_ox2w53.svg" alt="Shipbubble JS SDK" height=200/>
     </a>
     <h1 align="center">Shipbubble SDK (JavaScript / TypeScript)</h1>
-    <!-- <img alt="npm" src="https://img.shields.io/npm/v/shipbubble?label=version">
-    <img src="https://img.shields.io/github/last-commit/shipbubble/">
-    <img src="https://img.shields.io/bundlephobia/minzip/shipbubble">
-    <img src="https://img.shields.io/npm/types/shipbubble"> -->
+    <img alt="npm" src="https://img.shields.io/npm/v/shipbubble-sdk?label=version">
+    <img src="https://img.shields.io/github/last-commit/shipbubble-sdk/">
+    <img src="https://img.shields.io/bundlephobia/minzip/shipbubble-sdk">
+    <img src="https://img.shields.io/npm/types/shipbubble-sdk">
   </p>
   <p>
     <a href="https://docs.shipbubble.com">Documentation</a>
@@ -18,7 +18,7 @@
     <a href="https://docs.shipbubble.com">Getting Started</a>
   </p>
   <p>
-    The Shipbubble SDK is a JavaScript library that allows you to interact with the Shipbubble API from a Node.js application or a browser. It provides a way to authenticate, make requests, and handle responses.
+    The Shipbubble SDK is a JavaScript library that allows you to interact with the Shipbubble API from a Node.js application. It provides a way to authenticate, make requests, and handle responses.
   </p>
   <br/>
 </div>
