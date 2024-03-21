@@ -1,14 +1,11 @@
-# shipbubble-node-sdk
-
 <div align="center">
     <a align="center" href="https://www.shipbubble.com/" target="_blank">
-      <img src="https://res.cloudinary.com/delivry/image/upload/v1693997143/app_assets/white-shipbubble-logo_ox2w53.svg" alt="Shipbubble JS SDK" height=200/>
+      <img src="./logo.png" alt="Shipbubble JS SDK" height=200/>
     </a>
     <h1 align="center">Shipbubble SDK (JavaScript / TypeScript)</h1>
-    <img alt="npm" src="https://img.shields.io/npm/v/shipbubble-sdk?label=version">
-    <img src="https://img.shields.io/github/last-commit/shipbubble-sdk/">
-    <img src="https://img.shields.io/bundlephobia/minzip/shipbubble-sdk">
-    <img src="https://img.shields.io/npm/types/shipbubble-sdk">
+    <img alt="npm" src="https://img.shields.io/npm/v/shipbubble?label=version">
+    <img src="https://img.shields.io/bundlephobia/minzip/shipbubble">
+    <img src="https://img.shields.io/npm/types/shipbubble">
   </p>
   <p>
     <a href="https://docs.shipbubble.com">Documentation</a>

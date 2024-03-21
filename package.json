@@ -1,9 +1,11 @@
 {
-  "name": "shipbubble-sdk",
+  "name": "shipbubble",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "description": "Shipbubble API SDK for Node.js",
   "author": "Shalom Ogunshola",
+  "private": false,
   "license": "MIT",
   "repository": {
     "type": "git",
