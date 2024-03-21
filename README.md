@@ -1,6 +1,6 @@
 <div align="center">
     <a align="center" href="https://www.shipbubble.com/" target="_blank">
-      <img src="./logo.png" alt="Shipbubble JS SDK" height=200/>
+      <img src="https://res.cloudinary.com/delivry/image/upload/v1693997143/app_assets/black-shipbubble-logo_lnqhao.svg" alt="Shipbubble JS SDK" height=200/>
     </a>
     <h1 align="center">Shipbubble SDK (JavaScript / TypeScript)</h1>
     <img alt="npm" src="https://img.shields.io/npm/v/shipbubble?label=version">
