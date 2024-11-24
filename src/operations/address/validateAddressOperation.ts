@@ -29,7 +29,7 @@ export const validateAddressesOperation: Operation<
   method: 'POST',
   name: 'validateAddress',
   urlPathPattern: '/shipping/address/validate',
-  bodyParamNames: ['address', 'email', 'name', 'phone'],
+  bodyParamNames: ['address', 'email', 'name', 'phone', 'latitude', 'longitude'],
   getRequestUrlParams,
   getRequestBody,
   deserializeResponse,

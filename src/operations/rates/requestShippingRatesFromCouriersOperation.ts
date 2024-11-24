@@ -112,7 +112,7 @@ function deserializeResponse(jsonResponse: RequestShippingRatesFromCouriersJSONR
     })),
     cheapestCourier: {
       ...toCamelCase(jsonResponse.data.cheapest_courier),
-      deliveryEtaTime: new Date(jsonResponse.data.cheapest_courier.delivery_eta_time),
+      deliveryEtaTime: new Date((jsonResponse.data.cheapest_courier as any).delivery_eta_time),
     },
     checkoutData: {
       ...toCamelCase(jsonResponse.data.checkout_data),

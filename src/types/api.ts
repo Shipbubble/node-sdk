@@ -345,6 +345,8 @@ export interface operations {
           name?: string;
           /** @example 08057575855 */
           phone?: string;
+          latitude?: Number;
+          longitude?: Number
         };
       };
     };
